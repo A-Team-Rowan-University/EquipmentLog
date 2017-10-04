@@ -28,3 +28,12 @@ function getItem(item_name) {
 
 }
 
+
+function addItem(item){
+
+  equipment_sheet.appendRow( [item.itemName, item.prop2, item.prop3]  );
+  
+  
+}
+
+
