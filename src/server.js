@@ -8,8 +8,8 @@ function getItem(item_name) {
   
   var item = {
     itemName: null,
-    prop2: null,
-    prop3: null
+    itemLoc: null,
+    itemBorrower: null
   
   }
   
@@ -31,7 +31,7 @@ function getItem(item_name) {
 
 function addItem(item){
 
-  equipment_sheet.appendRow( [item.itemName, item.prop2, item.prop3]  );
+  equipment_sheet.appendRow( [item.itemName, item.itemLoc, item.Borrower]  );
   
   
 }
