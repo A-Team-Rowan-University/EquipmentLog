@@ -1,8 +1,30 @@
+var equipment_sheet = SpreadsheetApp.openById("13RX9kDpH1E1fhoUhit8bFBJh-5wQ3R6_S0j1NbqQc-o");
+//var equipment_sheet = SpreadsheetApp.openById("1tV_IAl5obBcWzMqI6Q1ZUdDcRWX0JADSSaIh2SzNqi8");
 
-var equipment_speadsheet = SpreadsheetApp.openById("1tV_IAl5obBcWzMqI6Q1ZUdDcRWX0JADSSaIh2SzNqi8");
 
-function myFunction() {
+function getItem(item_name) {
+  
+  var values = equipment_sheet.getDataRange().getValues();
+  
+  var item = {
+    itemName: null,
+    prop2: null,
+    prop3: null
+  
+  }
   
   
+  for(var i = 0; i < values.length; i++){
+    if(values[i][0] == item_name){
+      item.itemName = values[i][1];
+      item.prop2 = values[i][2];
+      item.prop3 = values[i][3];
+      break;
+    }
+  }
   
+  return item;
+  
+
 }
+
