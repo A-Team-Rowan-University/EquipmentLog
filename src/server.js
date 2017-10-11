@@ -64,6 +64,7 @@ function checkOut(instrument_id, new_loc, email){
 
 
 }
+}
 
 
 function addItem(item){
