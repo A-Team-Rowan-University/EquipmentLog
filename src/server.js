@@ -13,13 +13,12 @@ function getItemInfo(instrument_id) {
   
   var item = {
     id: null,
-    manf: null,
-    partno: null,
-    serialno: null,
-    type: null,
-    curr_loc: null,
-    home_loc: null,
-    borr_email: null
+    manufacturer: null,
+    part_number: null,
+    serial_number: null,
+    current_location: null,
+    home_location: null,
+    borrower: null
   
   }
   
@@ -27,13 +26,12 @@ function getItemInfo(instrument_id) {
   for(var i = 1; i < values.length; i++){
     if(values[i][0] == instrument_id){
       item.id = values[i][1];
-      item.manf = values[i][2];
-      item.partno = values[i][3];
-      item.serialno = values[i][4];
-      item.type = values[i][5];
-      item.curr_loc = values[i][6];
-      item.home_loc = values[i][7];
-      item.borr_email = values[i][8];
+      item.manufacturer = values[i][2];
+      item.part_number = values[i][3];
+      item.serial_number = values[i][4];
+      item.current_location = values[i][5];
+      item.home_location = values[i][6];
+      item.borrower = values[i][7];
       
       break;
     }
@@ -49,8 +47,8 @@ function checkOut(instrument_id, new_loc, email){
 
   for(var i = 1; i < values.length; i++){
     if(values[i][0] == instrument_id){
-        var email_cell = "H" + i.toString(); 
-        var new_loc_cell = "F" + i.toString();
+        var email_cell = "G" + i.toString(); 
+        var new_loc_cell = "E" + i.toString();
 
         email_cell = equipment_sheet.getRange(email_cell);
         new_loc_cell = equipment_sheet.getRange(new_loc_cell);
@@ -68,7 +66,7 @@ function checkOut(instrument_id, new_loc, email){
 
 
 function addItem(item){
-    equipment_sheet.appendRow( [item.id, item.manf, item.partno, item.serialno, item.type, item.curr_loc, item.home_loc, item.borr_email] );
+    equipment_sheet.appendRow( [item.id, item.manufacturer, item.part_number, item.serial_number, item.current_location, item.home_location, item.borrower] );
 }
 
 
