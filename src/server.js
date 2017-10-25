@@ -4,6 +4,16 @@ var equipment_sheet = SpreadsheetApp.openById("13RX9kDpH1E1fhoUhit8bFBJh-5wQ3R6_
 var values = equipment_sheet.getDataRange().getValues();
 
 
+function doGet(e){
+
+  request = e.pathInfo;
+
+  e.pathInfo = "test"; 
+
+  var params = JSON.stringify(e);
+  return HtmlService.createHtmlOutput(params);
+}
+
 
 
 
@@ -107,13 +117,23 @@ function getItemInfoTest(){
 
 function checkOutTest(){
 
-  instrument_id = "inst_id1"
+  instrument_id = "inst_id5"
   new_loc = "RM308";
   new_email = "test@rowan.edu"
 
   checkOut(instrument_id, new_loc, new_email);
 
+
+
+}
+
+
+function checkInTest(){
+  instrument_id = "inst_id5";
+
+
   checkIn(instrument_id);
 
+  
 
 }
