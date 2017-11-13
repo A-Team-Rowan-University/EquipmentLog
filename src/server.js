@@ -35,13 +35,13 @@ function getItemInfo(instrument_id) {
   
   for(var i = 1; i < values.length; i++){
     if(values[i][0] == instrument_id){
-      item.id = values[i][1];
-      item.manufacturer = values[i][2];
-      item.part_number = values[i][3];
-      item.serial_number = values[i][4];
-      item.current_location = values[i][5];
-      item.home_location = values[i][6];
-      item.borrower = values[i][7];
+      item.id = values[i][0];
+      item.manufacturer = values[i][1];
+      item.part_number = values[i][2];
+      item.serial_number = values[i][3];
+      item.current_location = values[i][4];
+      item.home_location = values[i][5];
+      item.borrower = values[i][6];
       
       break;
     }
